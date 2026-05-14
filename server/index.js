@@ -1,12 +1,11 @@
 // Importamos librerias
 import express, { json, urlencoded, static as static_ } from 'express'; //rest api
 import cors from 'cors'; //envio de peticiones dentro del servidor
-//import router from './routes/index.routes.js'; //cargamos archivo de rutas principal
 import dotenv from 'dotenv'; //para usar variables de entorno
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-
 import mongoService from './provider/mongoDb.js'
+import routerMovie from './routes/movie.routes.js';
 
 // Obtenemmos url actual y directorio
 const __filename = fileURLToPath(import.meta.url);
@@ -30,8 +29,15 @@ app.use(cors()) //Indicamos uso de cors (Cross-Origin Resource Sharing) - origen
 app.use(json()); //Indicamos uso de json para convertir peticiones en JSON
 app.use(urlencoded({ extended: true })); //Indicamos uso de urlencoded para convertir form-data en JSON
 
-// Indicamos uso de rutas
-//app.use('/api', router);
+// Indicamos uso de rutas para REST API
+
+// Ejemplo sencillo
+app.get('/', (req, res) => {
+  res.send('Hola!');
+});
+
+// Ejemplo con rutas
+app.use('/api/movie', routerMovie);
 
 
 // Probamos proveedor
@@ -55,10 +61,6 @@ app.use(urlencoded({ extended: true })); //Indicamos uso de urlencoded para conv
 // D = borramos documento
 //await mongoService.delete();
 //await mongoService.deleteMany();
-
-app.get('/', (req, res) => {
-  res.send('Hola!');
-});
 
 
 // Iniciamos servidor en PORT
