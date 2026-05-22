@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import mongoService from './provider/mongoDb.js'
 import routerMovie from './routes/movie.routes.js';
+import mongooseService from './provider/mongoose/mongooseDb.js'
 
 // Obtenemmos url actual y directorio
 const __filename = fileURLToPath(import.meta.url);
@@ -39,7 +40,26 @@ app.get('/', (req, res) => {
 // Ejemplo con rutas
 app.use('/api/movie', routerMovie);
 
+// MONGOOSE
+//await mongooseService.initConexion();
 
+// C = creamos documento
+//await mongooseService.addSimple();
+//await mongooseService.addMultiple();
+
+// R = leemos documento
+//await mongooseService.find();
+//await mongooseService.findById();
+
+// U = actualizamos documento
+//await mongooseService.update();
+
+// D = borramos documento
+//await mongooseService.delete();
+
+
+
+// MONGO DB
 // Probamos proveedor
 //await mongoService.probarConexion();
 

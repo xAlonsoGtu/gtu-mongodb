@@ -88,7 +88,7 @@ class MongoService{
             const pizzas = database.collection(COLL_PIZZAS);
 
             // Creamos un documento para guardar en la BD
-            const doc = { name: "Neapolitan pizza", shape: "round" };
+            const doc = { name: "Neapolitan pizza", shape: "round"};
 
             // Insertamos el documento en la colección
             const result = await pizzas.insertOne(doc);
@@ -167,7 +167,7 @@ class MongoService{
             const movies = database.collection(COLL_MOVIES);
 
             // Query de búsqueda
-            const query = { title: "Ball of Fire" };
+            const query = { tittel: "Ball of Fire" };
 
             // Opciones de búsqueda
             const options = {
