@@ -1,4 +1,6 @@
 # dependencies
 /node_modules
 /server/node_modules
-/spa/node_modules
+/server/spa/node_modules
+/server/spa/build
+/server/temp

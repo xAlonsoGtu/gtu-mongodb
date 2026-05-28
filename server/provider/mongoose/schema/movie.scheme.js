@@ -19,5 +19,5 @@ const movieSchema = new mongoose.Schema({
 //module.exports = movieSchema;
 
 // Exporamos modelo
-export default mongoose.model('Movie', movieSchema);;
+export default mongoose.model('Movie', movieSchema);
 //title: "Arsenic and Old Lace", genres: ["Comedy", "Romance"], year: 1944, cast: ["Cary Grant", "Priscilla Lane", "Raymond Massey"], imdb: { rating: 6, votes: 25673, id: 368226 } 

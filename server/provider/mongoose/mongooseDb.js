@@ -147,7 +147,7 @@ class MongooseService{
             query.select("title genres");
 
             // Ejecutamos query
-            var res = await query.exec();
+            var res = await query.exec();`^`
 
             // Mostramos resultado
             console.log(res);

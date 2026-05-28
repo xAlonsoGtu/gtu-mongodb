@@ -1,0 +1,85 @@
+/* Constantes de colores y propiedades */
+:root {
+    --color-shades-midnight-navy: #0e0918; 
+    --color-shades-dark-navy: #1b172830; 
+    --color-button-primary: #6b21ef;
+    --color-button-primary-from: #077ac7;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body{
+  background-color: var(--color-shades-midnight-navy);  
+}
+
+.effect-bg {
+    aspect-ratio: 1 / 2.2;
+    background-image: linear-gradient(#ffffff40, #5159d9b3);
+    border-radius: 800%;
+    filter: blur(128px);
+    left: 50%;
+    max-width: 400px;
+    opacity: .45;
+    position: absolute;
+    /* top: 55%; */
+    transform: translate(-50%, -50%);
+    width: 80%;
+    z-index: -1;
+}
+
+.card--white-transparent {
+  border-color: #ffffff1a;
+  background-color: var(--color-shades-dark-navy, #1b172840);
+}
+
+.btn-effect{
+    --bg-from: var(--color-button-primary-from);
+    --bg-to: var(--color-button-primary);
+    --bg-hover: #fff0;
+    background: linear-gradient(to bottom, var(--bg-hover), var(--bg-hover)), linear-gradient(141deg, var(--bg-from), var(--bg-to));
+    box-shadow: inset 0 1px 1px #fff3, 0 1px 2px #08080833, 0 4px 4px #08080814, 0 7px 0 -12px #077ac7, inset 0 6px 12px #ffffff1f;
+    transition-duration: .3s;
+    transition-property: --bg-from, --bg-to, --bg-hover;
+    border: none;
+}    
+
+.btn-effect:hover:not(:disabled) {
+    --bg-hover: #ffffff1f;
+}
